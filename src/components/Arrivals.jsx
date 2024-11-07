@@ -1,9 +1,4 @@
 
-
-import arr1 from "../assets/arrimg1.png"
-import arr2 from "../assets/arrimg2.png"
-import arr3 from "../assets/arrimg3.png"
-import arr4 from "../assets/arrimg4.png"
 import { FaHeart } from "react-icons/fa";
 import 'animate.css';
 import { FaCartShopping } from "react-icons/fa6";
