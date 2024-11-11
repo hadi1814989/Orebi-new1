@@ -66,7 +66,7 @@ import products from '../data';
     
     let handleBrand = (bitem)=>{
       let filterItem1 = info.filter((item)=> item.brand == bitem)
-     setBrandFilter(filterItem1)
+      setCategoryFilter(filterItem1)
     }
     let handelChange = (e)=>{
       setPerPage(e.target.value)
@@ -78,19 +78,31 @@ import products from '../data';
       setLow(value.low);
       setHigh(value.high);
       let priceRange = info.filter((item)=> item.price > value.low & item.price < value.high )
-      setPriceShow(priceRange);
+      if(priceRange.length > 0){
+        setCategoryFilter(priceRange);
+      }else{
+         setCategoryFilter("")
+      }
     }
-    let handlePrice1 = (value)=>{
-      setLow(value.low);
-      setHigh(value.high);
-      let priceRange = info.filter((item)=> item.price > value.low & item.price < value.high )
-      setPriceShow(priceRange);
+    let handlePrice1 = (value1)=>{
+      setLow(value1.low);
+      setHigh(value1.high);
+      let priceRange1 = info.filter((item)=> item.price > value1.low & item.price < value1.high )
+      if(priceRange1.length > 0){
+        setCategoryFilter(priceRange1);
+      }else{
+         setCategoryFilter("")
+      }
     }
-    let handlePrice2 = (value)=>{
-      setLow(value.low);
-      setHigh(value.high); 
-      let priceRange = info.filter((item)=> item.price > value.low & item.price < value.high )
-      setPriceShow(priceRange);
+    let handlePrice2 = (value2)=>{
+      setLow(value2.low);
+      setHigh(value2.high); 
+      let priceRange2 = info.filter((item)=> item.price > value2.low & item.price < value2.high )
+      if(priceRange2.length > 0){
+        setCategoryFilter(priceRange2);
+      }else{
+         setCategoryFilter("")
+      }
     }
   
   return (
@@ -203,7 +215,7 @@ import products from '../data';
       </div>
      </div>
      <div className=" w-full">
-     <div className="w-[100%] flex flex-wrap justify-between ">
+     <div className="flex flex-wrap justify-between ">
       
      {loading ? (
     <h2 className='text-[40px] font-DM text-center'>loading.....</h2>
